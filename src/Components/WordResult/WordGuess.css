@@ -1,0 +1,7 @@
+.wordGrid {
+	display: flex;
+}
+
+.individualLetter {
+	padding: 1rem;
+}

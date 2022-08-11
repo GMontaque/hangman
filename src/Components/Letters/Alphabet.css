@@ -1,0 +1,19 @@
+.AlphabetGrid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.letters {
+	padding: 1rem;
+	width: min-content;
+}
+
+.letters:hover {
+	cursor: pointer;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+	text-decoration: underline;
+	width: min-content;
+	padding: 1rem;
+}

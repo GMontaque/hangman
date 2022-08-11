@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+import "./App.css";
+import Header from "./Components/TitleText/TitleText";
+import Hangman from "./Components/Hangman/HangmanFig";
+import Alphabet from "./Components/Letters/Alphabet";
+import WordGuess from "./Components/WordResult/WordGuess";
+import { useState } from "react";
+import WordInput from "./Components/Words/WordInput";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// result of user guessing a letter
+	let [GuessLetter, SetGuessLetter] = useState("");
+
+	let guessedLetter = (e) => SetGuessLetter(e);
+
+	// return value of user inputing a word to guess
+	let [userWord, setUserWord] = useState("");
+
+	let userInputWord = (e) => setUserWord(e);
+
+	// confirm random word to use
+	let [randomWord, setRandomWord] = useState("");
+
+	let userRandomWord = (e) => {
+		setRandomWord(e);
+	};
+
+	console.log(GuessLetter, userWord, randomWord);
+	return (
+		<>
+			<Header></Header>
+			<WordInput
+				inputWord={userInputWord}
+				getRandomWord={userRandomWord}
+			></WordInput>
+
+			<div className="row overlay" id="outter">
+				<div className="col-md-6 ">
+					<Hangman></Hangman>
+				</div>
+				<div className="col-md-6 ">
+					<Alphabet getWord={guessedLetter}></Alphabet>
+				</div>
+			</div>
+			<div className="row">
+				<WordGuess
+					wordToGuess={randomWord}
+					userInputWordGuess={userWord}
+				></WordGuess>
+			</div>
+		</>
+	);
 }
 
 export default App;
