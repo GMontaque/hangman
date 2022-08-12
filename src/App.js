@@ -25,7 +25,7 @@ function App() {
 		setRandomWord(e);
 	};
 
-	console.log(GuessLetter, userWord, randomWord);
+	// console.log(GuessLetter, userWord, randomWord);
 	return (
 		<>
 			<Header></Header>
@@ -39,13 +39,14 @@ function App() {
 					<Hangman></Hangman>
 				</div>
 				<div className="col-md-6 ">
-					<Alphabet getWord={guessedLetter}></Alphabet>
+					<Alphabet getLetterGuess={guessedLetter}></Alphabet>
 				</div>
 			</div>
 			<div className="row">
 				<WordGuess
-					wordToGuess={randomWord}
+					RandomwordToGuess={randomWord}
 					userInputWordGuess={userWord}
+					letterGuess={GuessLetter}
 				></WordGuess>
 			</div>
 		</>

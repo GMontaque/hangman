@@ -4,7 +4,7 @@ function Alphabet(props) {
 	const alpha = Array.from(Array(26)).map((e, i) => i + 65);
 	const alphabet = alpha.map((x) => String.fromCharCode(x));
 	function house(prop) {
-		props.getWord(prop.target.innerText);
+		props.getLetterGuess(prop.target.innerText);
 	}
 	return (
 		<>
