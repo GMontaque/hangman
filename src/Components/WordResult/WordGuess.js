@@ -12,7 +12,13 @@ function WordGuess(props) {
 	console.log("user input word, " + userWord);
 	console.log("letter guess, " + letterGuessed);
 
-	console.log(randomWord.search("e"));
+	// console.log(randomWord.search("e"));
+
+	// randomWordSplit = welcome
+
+	// console.log(randomWordSplit);
+
+	console.log(randomWordSplit.includes(letterGuessed));
 
 	let letterSpaces = [];
 	for (let index = 0; index < randomWordSplit.length; index++) {

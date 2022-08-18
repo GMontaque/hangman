@@ -17,7 +17,7 @@ function WordInput(props) {
 			document.getElementById("inputWord").setAttribute("hidden", "");
 			// let numbers = Math.floor(Math.random() * 10);
 		}
-		props.getRandomWord(randomWord[3]);
+		props.getRandomWord(randomWord[3].toUpperCase());
 		const ell = document.getElementById("outter");
 		ell.classList.remove("overlay");
 	};
